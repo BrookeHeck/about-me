@@ -2,7 +2,7 @@
 
 ## About Me Guessing Game
 
-I build an app with a guessing game that allows a user to learn about me. It personalizes the experience by asking for the user's name and greeting them. It then prompts the user to answer five yes or no questions about me and provides alerts the user of the correct answer after each question is answered. Lastly, it says thank you for playing and prvoides a summary of correct answers on webpage. This webpage is an interactive way for user's to learn a few fun facts about me.
+I build an app with a guessing game that allows a user to learn about me. It personalizes the experience by asking for the user's name and greeting them. It then prompts the user to answer five yes or no questions about me and provides alerts of the correct answer after each question is answered. Lastly, it says thank you for playing and prvoides a summary of correct answers on webpage. This webpage is an interactive way for user's to learn a few fun facts about me.
 
 ### Author: Brooke Heck
 
