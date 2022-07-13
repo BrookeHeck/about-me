@@ -1,7 +1,7 @@
 'use strict';
 
-let name = prompt('Please enter your name');
-alert(`Hi ${name}, here is a guessing game about me!`);
+let username = prompt('Please enter your name');
+alert(`Hi ${username}, here is a guessing game about me!`);
 
 let questionPrompts = [
   'I\'m a Seattle native.',
@@ -9,7 +9,6 @@ let questionPrompts = [
   'I have two siblings.',
   'I\'m a huge Green Bay Packers fan!!!!',
   'I have a pilot\'s license.',
-  
 ];
 
 let answerPrompts = [
@@ -31,14 +30,14 @@ for (let i = 0; i < 5; i++) {
       correct++;
     } else console.log('sorry, incorrect');
   } else if (answerPrompts[i][0] === 1) {
-      if (answer.toLowerCase() === 'n' || answer.toLowerCase() === 'no') {
-        console.log('correct!');
-        correct++;
-      } else console.log('sorry, incorrect');
+    if (answer.toLowerCase() === 'n' || answer.toLowerCase() === 'no') {
+      console.log('correct!');
+      correct++;
+    } else console.log('sorry, incorrect');
   }
 }
 
-alert(`Thank you for playing the guessing game ${name}! You got ${correct} questions correct!`);
+alert(`Thank you for playing the guessing game ${username}! You got ${correct} questions correct!`);
 
 let scoreSummary = document.querySelector('#scoreSummary');
-scoreSummary.innerHTML = (`You got ${correct} questions correct out of 5.`)
+scoreSummary.innerHTML = (`You got ${correct} questions correct out of 5.`);
