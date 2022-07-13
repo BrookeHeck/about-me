@@ -39,42 +39,40 @@ for (let i = 0; i < 5; i++) {
 }
 
 alert(`Thank you for playing the guessing game ${username}! You got ${correct} questions correct!`);
+alert(`Hold on ${username}, I have two more bonus questions for you!`);
 
 //adding a sixth question to the game
-function checkValid(answer) {
-  if (Number.isInteger(parseInt(answer))) {
-    return parseInt(answer);
-  } else return -1;
+
+function checkValid(userInput) {
+  if (Number.isInteger(parseInt(userInput))) return parseInt(userInput);
+  else return -1;
 }
 
-alert(`Hold on ${username}, I have two more bonus questions for you!`);
 let isCorrect = false;
-let ageGuess = prompt('Guess my age');
-for (let i = 0; i < 3; i++) {
-  ageGuess = checkValid(ageGuess);
-  if (ageGuess === -1) {
-    ageGuess = prompt('Please enter an integer. Please try again');
-  } else if(ageGuess === 25) {
+let counter = 0;
+let userInput;
+while (!isCorrect && counter < 4) {
+  if(counter === 0) prompt('Guess my age');
+  let ageGuess = checkValid(userInput);
+  if (ageGuess === -1) userInput = prompt('Please enter an integer. Please try again');
+  else if(ageGuess === 25) {
     alert('That\'s correct!');
     correct++;
     isCorrect = true;
-    break;
-  } else if (ageGuess < 25) {
-    ageGuess = prompt('That\'s to low. Guess again.');
-  } else if (ageGuess > 25) {
-    ageGuess = prompt('That\'s to high. Guess again');
   }
+  else if (ageGuess < 25) userInput = prompt('That\'s to low. Guess again.');
+  else if (ageGuess > 25) userInput = prompt('That\'s to high. Guess again');
+  counter++;
 }
-
-if(!isCorrect) {
-  alert('Sorry, you ran out of guesses. Try the last question.');
-}
+if(!isCorrect) alert('Sorry, you ran out of guesses. Try the last question.');
 
 // adding a seventh question
 let countries = ['canada', 'germany', 'france', 'switzerland', 'luxemburg', 'belgium'];
+
 let countryIsRight = false;
-let answer = prompt('Other than the US, guess a country that I\'ve visited');
-for(let i = 0; i < 5; i++) {
+counter = 0;
+while (!countryIsRight && counter < 6) {
+  let answer = prompt('Other than the US, guess a country that I\'ve visited');
   for(let country of countries) {
     if(answer.toLowerCase() === country) {
       countryIsRight = true;
@@ -82,16 +80,22 @@ for(let i = 0; i < 5; i++) {
       break;
     }
   }
-  if(!countryIsRight) {
-    answer = prompt('Incorrect, try again. Other than the US, guess a country that I\'ve visited');
-  }
+  if(!countryIsRight) alert('Incorrect');
+  counter++;
 }
 
+
+let str = 'Any of these answers would have been correct.\n';
+for(let country of countries) {
+  str = str + country[0].toUpperCase() + country.slice(1, country.length) + ', ';
+}
+str = str.slice(0, str.length - 2);
+alert(str);
 
 let scoreSummary = document.querySelector('#scoreSummary');
 scoreSummary.innerHTML = (`You got ${correct} questions correct out of 7.`);
 
-// top ten scripts
+// display top ten
 let topTenArr = ['fav1', 'fav2', 'fav3', 'fav4', 'fav5', 'fav6', 'fav7', 'fav8', 'fav9', 'fav10'];
 let list = document.querySelector('#topten');
 for (let fav of topTenArr) {
