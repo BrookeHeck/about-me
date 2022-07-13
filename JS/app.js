@@ -1,6 +1,5 @@
 'use strict';
 
-
 // guessing game prompts and alerts
 let username = prompt('Please enter your name');
 alert(`Hi ${username}, here is a guessing game about me!`);
@@ -40,6 +39,38 @@ for (let i = 0; i < 5; i++) {
 }
 
 alert(`Thank you for playing the guessing game ${username}! You got ${correct} questions correct!`);
+
+//adding a sixth question to the game
+function checkValid(answer) {
+  if (Number.isInteger(parseInt(answer))) {
+    return parseInt(answer);
+  } else return -1;
+}
+
+alert(`Hold on ${username}, I have two more bonus questions for you!`);
+let isCorrect = false;
+let ageGuess = prompt('Guess my age');
+for (let i = 0; i < 4; i++) {
+  ageGuess = checkValid(ageGuess);
+  if (ageGuess === -1) {
+    ageGuess = prompt('Please enter an integer. Please try again');
+  } else if(ageGuess === 25) {
+    alert('That\'s correct!');
+    correct++;
+    isCorrect = true;
+    break;
+  } else if (ageGuess < 25) {
+    ageGuess = prompt('That\'s to low. Guess again.');
+  } else if (ageGuess > 25) {
+    ageGuess = prompt('That\'s to high. Guess again');
+  }
+}
+
+if(!isCorrect) {
+  alert('Sorry, you ran out of guesses. Try the last question');
+}
+
+// adding a seventh question
 
 let scoreSummary = document.querySelector('#scoreSummary');
 scoreSummary.innerHTML = (`You got ${correct} questions correct out of 5.`);
