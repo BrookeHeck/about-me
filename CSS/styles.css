@@ -36,9 +36,31 @@ p {
 }
 
 footer {
-  padding-top: 80px;
+  padding-top: 30rem;
 }
 
 footer p {
   font-size: 8px;
+}
+
+ul {
+  margin-left: 30px;
+}
+
+ul li {
+  list-style-type: square;
+  margin-left: 30px;
+  color: #84a59d;
+  padding: 5px;
+}
+
+ol {
+  margin-left: 30px;
+}
+
+ol .topTenItem {
+  list-style: decimal;
+  margin-left: 30px;
+  color: #84a59d;
+  padding: 5px;
 }
