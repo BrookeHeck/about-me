@@ -38,22 +38,17 @@ for (let i = 0; i < 5; i++) {
   }
 }
 
-alert(`Thank you for playing the guessing game ${username}! You got ${correct} questions correct!`);
 alert(`Hold on ${username}, I have two more bonus questions for you!`);
 
 //adding a sixth question to the game
-
-function checkValid(userInput) {
-  if (Number.isInteger(parseInt(userInput))) return parseInt(userInput);
-  else return -1;
-}
-
 let isCorrect = false;
 let counter = 0;
-let userInput;
-while (!isCorrect && counter < 4) {
+let userInput = 0;
+let ageGuess = 0;
+while (!isCorrect && counter < 3) {
   if(counter === 0) userInput = prompt('Guess my age');
-  let ageGuess = checkValid(userInput);
+  if (Number.isInteger(parseInt(userInput))) ageGuess = parseInt(userInput);
+  else ageGuess = -1;
   if (ageGuess === -1) userInput = prompt('Please enter an integer. Please try again');
   else if(ageGuess === 25) {
     alert('That\'s correct!');
@@ -94,6 +89,7 @@ alert(str);
 
 let scoreSummary = document.querySelector('#scoreSummary');
 scoreSummary.innerHTML = (`You got ${correct} questions correct out of 7.`);
+alert(`Thank you for playing the guessing game ${username}! You got ${correct} questions correct!`);
 
 // display top ten
 let topTenArr = ['fav1', 'fav2', 'fav3', 'fav4', 'fav5', 'fav6', 'fav7', 'fav8', 'fav9', 'fav10'];
