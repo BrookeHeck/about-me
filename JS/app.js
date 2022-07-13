@@ -6,7 +6,7 @@ alert(`Hi ${username}, here is a guessing game about me!`);
 
 let questionPrompts = [
   'I\'m a Seattle native.',
-  'I\'ve been to seven different countries.',
+  'I\'ve ran a marathon.',
   'I have two siblings.',
   'I\'m a huge Green Bay Packers fan!!!!',
   'I have a pilot\'s license.',
@@ -14,7 +14,7 @@ let questionPrompts = [
 
 let answerPrompts = [
   [1, 'No, born and raised in Wisconsin.'],
-  [2, 'Yes! US, Canada, Germany, France, Switzerland, Luxemburg, and Belgium.'],
+  [2, 'Barely, but yes. I ran one in Michigan earlier this spring.'],
   [2, 'Yes, an older sister and younger brother'],
   [2, 'Of course, I\'m a fan of all Wisconsin sports teams.'],
   [1, 'No, a future goal of mine though.']
@@ -50,7 +50,7 @@ function checkValid(answer) {
 alert(`Hold on ${username}, I have two more bonus questions for you!`);
 let isCorrect = false;
 let ageGuess = prompt('Guess my age');
-for (let i = 0; i < 4; i++) {
+for (let i = 0; i < 3; i++) {
   ageGuess = checkValid(ageGuess);
   if (ageGuess === -1) {
     ageGuess = prompt('Please enter an integer. Please try again');
@@ -67,13 +67,29 @@ for (let i = 0; i < 4; i++) {
 }
 
 if(!isCorrect) {
-  alert('Sorry, you ran out of guesses. Try the last question');
+  alert('Sorry, you ran out of guesses. Try the last question.');
 }
 
 // adding a seventh question
+let countries = ['canada', 'germany', 'france', 'switzerland', 'luxemburg', 'belgium'];
+let countryIsRight = false;
+let answer = prompt('Other than the US, guess a country that I\'ve visited');
+for(let i = 0; i < 5; i++) {
+  for(let country of countries) {
+    if(answer.toLowerCase() === country) {
+      countryIsRight = true;
+      correct++;
+      break;
+    }
+  }
+  if(!countryIsRight) {
+    answer = prompt('Incorrect, try again. Other than the US, guess a country that I\'ve visited');
+  }
+}
+
 
 let scoreSummary = document.querySelector('#scoreSummary');
-scoreSummary.innerHTML = (`You got ${correct} questions correct out of 5.`);
+scoreSummary.innerHTML = (`You got ${correct} questions correct out of 7.`);
 
 // top ten scripts
 let topTenArr = ['fav1', 'fav2', 'fav3', 'fav4', 'fav5', 'fav6', 'fav7', 'fav8', 'fav9', 'fav10'];
