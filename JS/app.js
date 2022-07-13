@@ -52,7 +52,7 @@ let isCorrect = false;
 let counter = 0;
 let userInput;
 while (!isCorrect && counter < 4) {
-  if(counter === 0) prompt('Guess my age');
+  if(counter === 0) userInput = prompt('Guess my age');
   let ageGuess = checkValid(userInput);
   if (ageGuess === -1) userInput = prompt('Please enter an integer. Please try again');
   else if(ageGuess === 25) {
