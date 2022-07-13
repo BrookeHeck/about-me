@@ -1,5 +1,7 @@
 'use strict';
 
+
+// guessing game prompts and alerts
 let username = prompt('Please enter your name');
 alert(`Hi ${username}, here is a guessing game about me!`);
 
@@ -41,3 +43,13 @@ alert(`Thank you for playing the guessing game ${username}! You got ${correct} q
 
 let scoreSummary = document.querySelector('#scoreSummary');
 scoreSummary.innerHTML = (`You got ${correct} questions correct out of 5.`);
+
+// top ten scripts
+let topTenArr = ['fav1', 'fav2', 'fav3', 'fav4', 'fav5', 'fav6', 'fav7', 'fav8', 'fav9', 'fav10'];
+let list = document.querySelector('#topten');
+for (let fav of topTenArr) {
+  let listItem = document.createElement('li');
+  listItem.innerHTML = fav;
+  listItem.setAttribute('class', 'topTenItem');
+  list.appendChild(listItem);
+}
