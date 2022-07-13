@@ -87,12 +87,16 @@ for(let country of countries) {
 str = str.slice(0, str.length - 2);
 alert(str);
 
+// score summary at bottom of webpage
 let scoreSummary = document.querySelector('#scoreSummary');
 scoreSummary.innerHTML = (`You got ${correct} questions correct out of 7.`);
 alert(`Thank you for playing the guessing game ${username}! You got ${correct} questions correct!`);
 
 // display top ten
-let topTenArr = ['fav1', 'fav2', 'fav3', 'fav4', 'fav5', 'fav6', 'fav7', 'fav8', 'fav9', 'fav10'];
+let topTenArr = [
+  'Stillness is the Key', 'Meditations', 'The Alchemist', 'Team of Rivals',
+  'The Plant Paradox', 'Letter\'s From a Stoic', '7 Habits of Highly Effective People',
+  'Fahrenheit 451', 'Can\'t Hurt Me', 'Ego is the Enemy'];
 let list = document.querySelector('#topten');
 for (let fav of topTenArr) {
   let listItem = document.createElement('li');
