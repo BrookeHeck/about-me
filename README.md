@@ -11,3 +11,5 @@ I build an app with a guessing game that allows a user to learn about me. It per
 
 ### Reflections and Comments
 This lab was mostly review for me, so nothing really new was learned from the actual code aspect, but I do need major improvement with GitHub. I’ve only used it once before this class and not from the terminal. I know the super basic commands on the terminal, but I need to get better with GitHub. Even though it was review, I still really liked doing the lab because it has been some time since I was coding everyday. It helps to do it consistently so that I don’t have to look anything up. I think eventually GitHub will be second nature to me as well.
+
+After lab 03, I'm improving with github commands from the terminal. I'm getting in the habit of add, commit, push for each time I make changes to my code. Also, I had forgot about the ternary operator but the TA, Chloe, gave me some awesome code suggestions where I could add the ternary operator to my make code more DRY. I took a look at the docs on MDN to refresh my memory of what each statement of the ternary operator is.
