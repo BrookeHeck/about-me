@@ -65,27 +65,29 @@ function askQuestions6(){
 }
 askQuestions6();
 // adding a seventh question
-let countries = [' Canada', ' Germany', ' France', ' Switzerland', ' Luxemburg', ' Belgium'];
+function askQuestion7(){
+  let countries = [' Canada', ' Germany', ' France', ' Switzerland', ' Luxemburg', ' Belgium'];
 
-let countryIsRight = false;
-let counter = 0;
-while (!countryIsRight && counter < 6) {
-  let answer = prompt('Other than the US, guess a country that I\'ve visited');
-  for(let country of countries) {
-    if(answer.toLowerCase() === country.toLowerCase().trim()) {
-      countryIsRight = true;
-      correct++;
-      break;
+  let countryIsRight = false;
+  let counter = 0;
+  while (!countryIsRight && counter < 6) {
+    let answer = prompt('Other than the US, guess a country that I\'ve visited');
+    for(let country of countries) {
+      if(answer.toLowerCase() === country.toLowerCase().trim()) {
+        countryIsRight = true;
+        correct++;
+        break;
+      }
     }
+    if(!countryIsRight) alert('Incorrect');
+    counter++;
   }
-  if(!countryIsRight) alert('Incorrect');
-  counter++;
+
+
+  let str = 'Any of these answers would have been correct.\n';
+  alert(str + '\n' + countries);
 }
-
-
-let str = 'Any of these answers would have been correct.\n';
-alert(str + '\n' + countries);
-
+askQuestion7();
 // score summary at bottom of webpage
 let scoreSummary = document.querySelector('#scoreSummary');
 scoreSummary.innerHTML = (`You got ${correct} question${correct === 1 ? '' : 's'} correct out of 7.`);
