@@ -61,14 +61,14 @@ while (!isCorrect && counter < 3) {
 if(!isCorrect) alert('Sorry, you ran out of guesses. Try the last question.');
 
 // adding a seventh question
-let countries = ['canada', 'germany', 'france', 'switzerland', 'luxemburg', 'belgium'];
+let countries = [' Canada', ' Germany', ' France', ' Switzerland', ' Luxemburg', ' Belgium'];
 
 let countryIsRight = false;
 counter = 0;
 while (!countryIsRight && counter < 6) {
   let answer = prompt('Other than the US, guess a country that I\'ve visited');
   for(let country of countries) {
-    if(answer.toLowerCase() === country) {
+    if(answer.toLowerCase() === country.toLowerCase().trim()) {
       countryIsRight = true;
       correct++;
       break;
@@ -80,11 +80,7 @@ while (!countryIsRight && counter < 6) {
 
 
 let str = 'Any of these answers would have been correct.\n';
-for(let country of countries) {
-  str = str + country[0].toUpperCase() + country.slice(1, country.length) + ', ';
-}
-str = str.slice(0, str.length - 2);
-alert(str);
+alert(str + '\n' + countries);
 
 // score summary at bottom of webpage
 let scoreSummary = document.querySelector('#scoreSummary');
