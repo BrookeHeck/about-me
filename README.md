@@ -5,6 +5,7 @@
 I build an app with a guessing game that allows a user to learn about me. It personalizes the experience by asking for the user's name and greeting them. It then prompts the user to answer five yes or no questions and two bonus questions about me. Throughout the game, the user is shown alerts of the correct answer after each question is answered. Lastly, it says thank you for playing and prvoides a summary of correct answers on webpage along with other information about me. This webpage is an interactive way for user's to learn a few fun facts about me.
 
 ### Author: Brooke Heck
+- In lab 4, Jeffrey Smith was my Driver while I was the navigator. He helped me add functions to my app.js file.
 
 ### Links and Resources
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
