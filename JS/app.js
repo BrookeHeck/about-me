@@ -39,33 +39,36 @@ function askQuestions() {
   }
 }
 askQuestions();
+
 alert(`Hold on ${username}, I have two more bonus questions for you!`);
 
 //adding a sixth question to the game
-let isCorrect = false;
-let counter = 0;
-let userInput = 0;
-let ageGuess = 0;
-while (!isCorrect && counter < 3) {
-  if(counter === 0) userInput = prompt('Guess my age');
-  ageGuess = Number.isInteger(parseInt(userInput)) ? parseInt(userInput) : -1;
-  if (ageGuess === -1) userInput = prompt('Please enter an integer. Please try again');
-  else if(ageGuess === 25) {
-    alert('That\'s correct!');
-    correct++;
-    isCorrect = true;
+function askQuestions6(){
+  let isCorrect = false;
+  let counter = 0;
+  let userInput = 0;
+  let ageGuess = 0;
+  while (!isCorrect && counter < 3) {
+    if(counter === 0) userInput = prompt('Guess my age');
+    ageGuess = Number.isInteger(parseInt(userInput)) ? parseInt(userInput) : -1;
+    if (ageGuess === -1) userInput = prompt('Please enter an integer. Please try again');
+    else if(ageGuess === 25) {
+      alert('That\'s correct!');
+      correct++;
+      isCorrect = true;
+    }
+    else if (ageGuess < 25) userInput = prompt('That\'s to low. Guess again.');
+    else if (ageGuess > 25) userInput = prompt('That\'s to high. Guess again');
+    counter++;
   }
-  else if (ageGuess < 25) userInput = prompt('That\'s to low. Guess again.');
-  else if (ageGuess > 25) userInput = prompt('That\'s to high. Guess again');
-  counter++;
+  if(!isCorrect) alert('Sorry, you ran out of guesses. Try the last question.');
 }
-if(!isCorrect) alert('Sorry, you ran out of guesses. Try the last question.');
-
+askQuestions6();
 // adding a seventh question
 let countries = [' Canada', ' Germany', ' France', ' Switzerland', ' Luxemburg', ' Belgium'];
 
 let countryIsRight = false;
-counter = 0;
+let counter = 0;
 while (!countryIsRight && counter < 6) {
   let answer = prompt('Other than the US, guess a country that I\'ve visited');
   for(let country of countries) {
