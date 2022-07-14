@@ -21,67 +21,73 @@ let answerPrompts = [
 ];
 
 let correct = 0;
-
-for (let i = 0; i < 5; i++) {
-  let answer = prompt(`Answer y/yes or n/no\n${questionPrompts[i]}`);
-  alert(answerPrompts[i][1]);
-  if (answerPrompts[i][0] === 2) {
-    if (answer.toLowerCase() === 'y' || answer.toLowerCase() === 'yes') {
-      console.log('correct!');
-      correct++;
-    } else console.log('sorry, incorrect');
-  } else if (answerPrompts[i][0] === 1) {
-    if (answer.toLowerCase() === 'n' || answer.toLowerCase() === 'no') {
-      console.log('correct!');
-      correct++;
-    } else console.log('sorry, incorrect');
+function askQuestions() {
+  for (let i = 0; i < 5; i++) {
+    let answer = prompt(`Answer y/yes or n/no\n${questionPrompts[i]}`);
+    alert(answerPrompts[i][1]);
+    if (answerPrompts[i][0] === 2) {
+      if (answer.toLowerCase() === 'y' || answer.toLowerCase() === 'yes') {
+        console.log('correct!');
+        correct++;
+      } else console.log('sorry, incorrect');
+    } else if (answerPrompts[i][0] === 1) {
+      if (answer.toLowerCase() === 'n' || answer.toLowerCase() === 'no') {
+        console.log('correct!');
+        correct++;
+      } else console.log('sorry, incorrect');
+    }
   }
 }
+askQuestions();
 
 alert(`Hold on ${username}, I have two more bonus questions for you!`);
 
 //adding a sixth question to the game
-let isCorrect = false;
-let counter = 0;
-let userInput = 0;
-let ageGuess = 0;
-while (!isCorrect && counter < 3) {
-  if(counter === 0) userInput = prompt('Guess my age');
-  ageGuess = Number.isInteger(parseInt(userInput)) ? parseInt(userInput) : -1;
-  if (ageGuess === -1) userInput = prompt('Please enter an integer. Please try again');
-  else if(ageGuess === 25) {
-    alert('That\'s correct!');
-    correct++;
-    isCorrect = true;
-  }
-  else if (ageGuess < 25) userInput = prompt('That\'s to low. Guess again.');
-  else if (ageGuess > 25) userInput = prompt('That\'s to high. Guess again');
-  counter++;
-}
-if(!isCorrect) alert('Sorry, you ran out of guesses. Try the last question.');
-
-// adding a seventh question
-let countries = [' Canada', ' Germany', ' France', ' Switzerland', ' Luxemburg', ' Belgium'];
-
-let countryIsRight = false;
-counter = 0;
-while (!countryIsRight && counter < 6) {
-  let answer = prompt('Other than the US, guess a country that I\'ve visited');
-  for(let country of countries) {
-    if(answer.toLowerCase() === country.toLowerCase().trim()) {
-      countryIsRight = true;
+function askQuestions6(){
+  let isCorrect = false;
+  let counter = 0;
+  let userInput = 0;
+  let ageGuess = 0;
+  while (!isCorrect && counter < 3) {
+    if(counter === 0) userInput = prompt('Guess my age');
+    ageGuess = Number.isInteger(parseInt(userInput)) ? parseInt(userInput) : -1;
+    if (ageGuess === -1) userInput = prompt('Please enter an integer. Please try again');
+    else if(ageGuess === 25) {
+      alert('That\'s correct!');
       correct++;
-      break;
+      isCorrect = true;
     }
+    else if (ageGuess < 25) userInput = prompt('That\'s to low. Guess again.');
+    else if (ageGuess > 25) userInput = prompt('That\'s to high. Guess again');
+    counter++;
   }
-  if(!countryIsRight) alert('Incorrect');
-  counter++;
+  if(!isCorrect) alert('Sorry, you ran out of guesses. Try the last question.');
 }
+askQuestions6();
+// adding a seventh question
+function askQuestion7(){
+  let countries = [' Canada', ' Germany', ' France', ' Switzerland', ' Luxemburg', ' Belgium'];
+
+  let countryIsRight = false;
+  let counter = 0;
+  while (!countryIsRight && counter < 6) {
+    let answer = prompt('Other than the US, guess a country that I\'ve visited');
+    for(let country of countries) {
+      if(answer.toLowerCase() === country.toLowerCase().trim()) {
+        countryIsRight = true;
+        correct++;
+        break;
+      }
+    }
+    if(!countryIsRight) alert('Incorrect');
+    counter++;
+  }
 
 
-let str = 'Any of these answers would have been correct.\n';
-alert(str + '\n' + countries);
-
+  let str = 'Any of these answers would have been correct.\n';
+  alert(str + '\n' + countries);
+}
+askQuestion7();
 // score summary at bottom of webpage
 let scoreSummary = document.querySelector('#scoreSummary');
 scoreSummary.innerHTML = (`You got ${correct} question${correct === 1 ? '' : 's'} correct out of 7.`);
