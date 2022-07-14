@@ -47,8 +47,7 @@ let userInput = 0;
 let ageGuess = 0;
 while (!isCorrect && counter < 3) {
   if(counter === 0) userInput = prompt('Guess my age');
-  if (Number.isInteger(parseInt(userInput))) ageGuess = parseInt(userInput);
-  else ageGuess = -1;
+  ageGuess = Number.isInteger(parseInt(userInput)) ? parseInt(userInput) : -1;
   if (ageGuess === -1) userInput = prompt('Please enter an integer. Please try again');
   else if(ageGuess === 25) {
     alert('That\'s correct!');
