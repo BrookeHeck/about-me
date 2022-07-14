@@ -21,23 +21,24 @@ let answerPrompts = [
 ];
 
 let correct = 0;
-
-for (let i = 0; i < 5; i++) {
-  let answer = prompt(`Answer y/yes or n/no\n${questionPrompts[i]}`);
-  alert(answerPrompts[i][1]);
-  if (answerPrompts[i][0] === 2) {
-    if (answer.toLowerCase() === 'y' || answer.toLowerCase() === 'yes') {
-      console.log('correct!');
-      correct++;
-    } else console.log('sorry, incorrect');
-  } else if (answerPrompts[i][0] === 1) {
-    if (answer.toLowerCase() === 'n' || answer.toLowerCase() === 'no') {
-      console.log('correct!');
-      correct++;
-    } else console.log('sorry, incorrect');
+function askQuestions() {
+  for (let i = 0; i < 5; i++) {
+    let answer = prompt(`Answer y/yes or n/no\n${questionPrompts[i]}`);
+    alert(answerPrompts[i][1]);
+    if (answerPrompts[i][0] === 2) {
+      if (answer.toLowerCase() === 'y' || answer.toLowerCase() === 'yes') {
+        console.log('correct!');
+        correct++;
+      } else console.log('sorry, incorrect');
+    } else if (answerPrompts[i][0] === 1) {
+      if (answer.toLowerCase() === 'n' || answer.toLowerCase() === 'no') {
+        console.log('correct!');
+        correct++;
+      } else console.log('sorry, incorrect');
+    }
   }
 }
-
+askQuestions();
 alert(`Hold on ${username}, I have two more bonus questions for you!`);
 
 //adding a sixth question to the game
