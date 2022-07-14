@@ -88,8 +88,8 @@ alert(str);
 
 // score summary at bottom of webpage
 let scoreSummary = document.querySelector('#scoreSummary');
-scoreSummary.innerHTML = (`You got ${correct} questions correct out of 7.`);
-alert(`Thank you for playing the guessing game ${username}! You got ${correct} questions correct!`);
+scoreSummary.innerHTML = (`You got ${correct} question${correct === 1 ? '' : 's'} correct out of 7.`);
+alert(`Thank you for playing the guessing game ${username}! You got ${correct} question${correct === 1 ? '' : 's'} correct!`);
 
 // display top ten
 let topTenArr = [
