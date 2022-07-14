@@ -7,6 +7,7 @@ I build an app with a guessing game that allows a user to learn about me. It per
 ### Author: Brooke Heck
 
 ### Links and Resources
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
 
 ### Reflections and Comments
 This lab was mostly review for me, so nothing really new was learned from the actual code aspect, but I do need major improvement with GitHub. I’ve only used it once before this class and not from the terminal. I know the super basic commands on the terminal, but I need to get better with GitHub. Even though it was review, I still really liked doing the lab because it has been some time since I was coding everyday. It helps to do it consistently so that I don’t have to look anything up. I think eventually GitHub will be second nature to me as well.
