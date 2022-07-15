@@ -48,7 +48,7 @@ function askQuestions6() {
   let counter = 0;
   let userInput = 0;
   let ageGuess = 0;
-  while (!isCorrect && counter < 3) {
+  while (!isCorrect && counter < 4) {
     if(counter === 0) userInput = prompt('Guess my age');
     ageGuess = Number.isInteger(parseInt(userInput)) ? parseInt(userInput) : -1;
     if (ageGuess === -1) userInput = prompt('Please enter an integer. Please try again');
@@ -56,10 +56,11 @@ function askQuestions6() {
       alert('That\'s correct!');
       correct++;
       isCorrect = true;
+    } else if (counter < 3) {
+      if (ageGuess < 25) userInput = prompt('That\'s to low. Guess again.');
+      else if (ageGuess > 25) userInput = prompt('That\'s to high. Guess again');
+      counter++;
     }
-    else if (ageGuess < 25) userInput = prompt('That\'s to low. Guess again.');
-    else if (ageGuess > 25) userInput = prompt('That\'s to high. Guess again');
-    counter++;
   }
   if(!isCorrect) alert('Sorry, you ran out of guesses. Try the last question.');
 }
